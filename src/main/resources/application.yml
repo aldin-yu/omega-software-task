@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/demo
-    username: techtutor
+    url: jdbc:postgresql://localhost:5432/omega-db
+    username: omega
     password: password
