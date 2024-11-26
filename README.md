@@ -102,7 +102,7 @@ curl -X PATCH "http://localhost:8080/v1/api/contracts/update?contractNumber=1/20
            "buyer": "Updated Buyer",
            "advancePaymentDate": "2024-07-01",
            "deliveryDeadline": "2024-08-01",
-           "status": "DELIVERED"
+           "status": "ORDERED"
          }'
 ```
 

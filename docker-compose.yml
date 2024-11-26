@@ -3,7 +3,7 @@ services:
     image: postgres:14
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
     environment:
       POSTGRES_USER: omega
       POSTGRES_PASSWORD: password
@@ -12,7 +12,7 @@ services:
     networks:
       - app-network
 
-  omega-app-14:
+  omega-app-13423:
     build:
       context: .
       no_cache: true
