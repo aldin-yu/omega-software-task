@@ -3,7 +3,7 @@
 - Java 17 at least
 - Maven
 
-Below are all the endpoints in this project with explanations and curls. 
+Below are all the endpoints in this project with explanations and curls.
 
 To run the project Docker needs to be running and you just run the *run.sh* "script" which will run the integration tests and create the Docker images.
 
@@ -49,6 +49,7 @@ This `curl` command sends a POST request to the `/create` endpoint to create a n
 ```bash
 curl -X POST "http://localhost:8080/v1/api/contracts/create" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer dummy_token" \
      -d '{
            "buyer": "John Doe",
            "advancePaymentDate": "2024-06-01",
@@ -74,7 +75,8 @@ curl -X POST "http://localhost:8080/v1/api/contracts/create" \
 This `curl` command sends a GET request to the `/all` endpoint to fetch all contracts filtered by buyer and status.
 
 ```bash
-curl -X GET "http://localhost:8080/v1/api/contracts/all?buyer=John%20Doe&status=CREATED"
+curl -X GET "http://localhost:8080/v1/api/contracts/all?buyer=John%20Doe&status=CREATED" \
+     -H "Authorization: Bearer dummy_token"
 ```
 
 ---
@@ -83,7 +85,8 @@ curl -X GET "http://localhost:8080/v1/api/contracts/all?buyer=John%20Doe&status=
 This `curl` command sends a GET request to the `/fetch` endpoint to fetch a contract by its contract number.
 
 ```bash
-curl -X GET "http://localhost:8080/v1/api/contracts/fetch?contractNumber=1/2024"
+curl -X GET "http://localhost:8080/v1/api/contracts/fetch?contractNumber=1/2024" \
+     -H "Authorization: Bearer dummy_token"
 ```
 
 ---
@@ -94,6 +97,7 @@ This `curl` command sends a PATCH request to the `/update` endpoint to update an
 ```bash
 curl -X PATCH "http://localhost:8080/v1/api/contracts/update?contractNumber=1/2024" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer dummy_token" \
      -d '{
            "buyer": "Updated Buyer",
            "advancePaymentDate": "2024-07-01",
@@ -108,7 +112,8 @@ curl -X PATCH "http://localhost:8080/v1/api/contracts/update?contractNumber=1/20
 This `curl` command sends a DELETE request to the `/delete` endpoint to delete a contract by its contract number.
 
 ```bash
-curl -X DELETE "http://localhost:8080/v1/api/contracts/delete?contractNumber=1/2024"
+curl -X DELETE "http://localhost:8080/v1/api/contracts/delete?contractNumber=1/2024" \
+     -H "Authorization: Bearer dummy_token"
 ```
 
 ---
@@ -117,7 +122,8 @@ curl -X DELETE "http://localhost:8080/v1/api/contracts/delete?contractNumber=1/2
 This `curl` command sends a GET request to the `/fetch` endpoint to retrieve items by a contract number.
 
 ```bash
-curl -X GET "http://localhost:8080/v1/api/items/fetch?contractNumber=1/2024"
+curl -X GET "http://localhost:8080/v1/api/items/fetch?contractNumber=1/2024" \
+     -H "Authorization: Bearer dummy_token"
 ```
 
 ---
@@ -128,6 +134,7 @@ This `curl` command sends a PATCH request to the `/update` endpoint to update it
 ```bash
 curl -X PATCH "http://localhost:8080/v1/api/items/update?contractNumber=1/2024" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer dummy_token" \
      -d '[
            {
              "id": 101,
@@ -154,6 +161,6 @@ This `curl` command sends a DELETE request to the `/delete` endpoint to soft del
 ```bash
 curl -X DELETE "http://localhost:8080/v1/api/items/delete?contractNumber=1/2024" \
      -H "Content-Type: application/json" \
+     -H "Authorization: Bearer dummy_token" \
      -d '[1, 2]'
 ```
-
