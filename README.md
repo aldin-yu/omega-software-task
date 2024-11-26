@@ -1,3 +1,17 @@
+# Project requirements
+- Docker
+- Java 17 at least
+- Maven
+
+Below are all the endpoints in this project with explanations and curls. 
+
+To run the project Docker needs to be running and you just run the *run.sh* "script" which will run the integration tests and create the Docker images.
+
+Happy testing Omega Software, sorry for breaching the deadlines!
+
+NEĆE SE PONOVITI!
+
+
 # API Endpoints Documentation
 
 ### 1. Register User (POST /v1/auth/signup)
