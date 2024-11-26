@@ -12,7 +12,7 @@ services:
     networks:
       - app-network
 
-  omega-app-133:
+  omega-app-14:
     build:
       context: .
       no_cache: true

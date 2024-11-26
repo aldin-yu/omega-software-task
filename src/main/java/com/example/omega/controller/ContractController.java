@@ -7,6 +7,7 @@ import com.example.omega.request.CreateContractRequest;
 import com.example.omega.request.UpdateContractRequest;
 import com.example.omega.service.ContractItemService;
 import jakarta.validation.Valid;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ private final ContractItemService contractItemService;
 		return contractItemService.fetchContract(contractNumber);
 	}
 	@PatchMapping("/update")
-	public void updateContract (@RequestParam String contractNumber, @RequestBody  @Valid UpdateContractRequest updateContractRequest) {
+	public void updateContract (@RequestParam  String contractNumber, @RequestBody  @Valid UpdateContractRequest updateContractRequest) {
 		contractItemService.updateContract(contractNumber, updateContractRequest);
 	}
 

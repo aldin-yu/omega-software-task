@@ -18,8 +18,6 @@ import org.testcontainers.utility.DockerImageName;
 @TestPropertySource("classpath:application-test.properties")
 class TestcontainersConfiguration {
 
-
-
     @Bean
     @ServiceConnection
     public PostgreSQLContainer<?> postgresContainer() {
