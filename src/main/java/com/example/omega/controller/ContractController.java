@@ -19,7 +19,7 @@ public class ContractController {
 
 private final ContractItemService contractItemService;
 
-@PostMapping("/create")
+	@PostMapping("/create")
 	public void createContract(@RequestBody @Valid CreateContractRequest createContractRequest) {
 		contractItemService.createContract(createContractRequest);
 	}
